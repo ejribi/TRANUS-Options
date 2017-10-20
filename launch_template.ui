@@ -1019,9 +1019,12 @@
       <widget class="QTextBrowser" name="console"/>
      </item>
      <item row="1" column="1">
-      <widget class="QDialogButtonBox" name="buttonBox">
+      <widget class="QDialogButtonBox" name="close_btn">
        <property name="standardButtons">
-        <set>QDialogButtonBox::Close|QDialogButtonBox::Help</set>
+        <set>QDialogButtonBox::Close</set>
+       </property>
+       <property name="centerButtons">
+        <bool>false</bool>
        </property>
       </widget>
      </item>

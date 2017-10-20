@@ -14,10 +14,10 @@ version=0.1
 author=STEEP Inria
 email=emna.jribi@inria.fr
 
-about=This plugin allows the execution of TRANUS programs without the use of the console or the TUS(TRANUS User Shell). It allows the simultaneous execution of these programs with several options and for different scenarios of the same project. Three programs are implemented in this plugin : Imploc,Imptra,Mats.
+about=This plugin allows the execution of TRANUS programs without the use of the console or the TUS(TRANUS User Shell). It allows the simultaneous execution of these programs with several options and for different scenarios of the same project. Four programs are implemented in this plugin : Imploc,Imptra,Mats and Matesp.
 
 tracker=unknown
-repository=https://gitlab.inria.fr/tranus/TRANUS_Interfaces/tree/master/src
+repository=https://gitlab.inria.fr/tranus/Tranus_QGIS_Plugins/tree/master/TRANUS_Options
 # End of mandatory metadata
 
 # Recommended items:

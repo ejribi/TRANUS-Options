@@ -507,10 +507,18 @@ class LcalInterface:
         if not os.path.exists(resultsDirectory):
             os.makedirs(resultsDirectory)
             
-        outimptra = os.path.join(logsDirectory, "outimptra_"+str(options.get(option))+".txt")
-        outimptraerr = os.path.join(logsDirectory, "outimptra_err_"+str(options.get(option))+".txt")
-        args = [program, self.tranusConf.scenarioId, "-"+option, "-o",self.tranusConf.scenarioId+"/Imptra/Results/IMPTRA_"+str(options.get(option))+"."+extension," "] 
-        proc = subprocess.Popen(args,shell=True,stdout=open(outimptra, 'w'), stderr=open(outimptraerr,'w'),stdin = subprocess.PIPE, cwd=self.tranusConf.workingDirectory).communicate()
+        if option == "A" :
+            for i in range(3):
+                outimptra = os.path.join(logsDirectory, "outimptra_"+str(options.get(option))+".txt")
+                outimptraerr = os.path.join(logsDirectory, "outimptra_err_"+str(options.get(option))+".txt")
+                args = [program, self.tranusConf.scenarioId, "-"+option,"-f",str(i+1), "-o",self.tranusConf.scenarioId+"/Imptra/Results/IMPTRA"+str(options.get(option))+"_"+str(i+1)+"."+extension," "] 
+                proc = subprocess.Popen(args,shell=True,stdout=open(outimptra, 'w'), stderr=open(outimptraerr,'w'),stdin = subprocess.PIPE, cwd=self.tranusConf.workingDirectory).communicate()
+            
+        else :
+            outimptra = os.path.join(logsDirectory, "outimptra_"+str(options.get(option))+".txt")
+            outimptraerr = os.path.join(logsDirectory, "outimptra_err_"+str(options.get(option))+".txt")
+            args = [program, self.tranusConf.scenarioId, "-"+option, "-o",self.tranusConf.scenarioId+"/Imptra/Results/IMPTRA_"+str(options.get(option))+"."+extension," "] 
+            proc = subprocess.Popen(args,shell=True,stdout=open(outimptra, 'w'), stderr=open(outimptraerr,'w'),stdin = subprocess.PIPE, cwd=self.tranusConf.workingDirectory).communicate()
         return 1
     
     

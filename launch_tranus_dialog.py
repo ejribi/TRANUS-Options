@@ -61,8 +61,8 @@ class LaunchTRANUSDialog(QtGui.QDialog, FORM_CLASS):
             tab.run_tranus_btn.clicked.connect(self.run_tranus_all_scenarios)
             tab.check_all_btn.clicked.connect(self.check_all_scenarios)
             tab.clear_console.clicked.connect(self.clear_history)
-            tab.buttonBox(QtGui.QDialogButtonBox.Close).clicked.connect(self.close)
-            tab.buttonBox(QtGui.QDialogButtonBox.Help).clicked.connect(self.help)
+            tab.close_btn.clicked.connect(self.close)
+       
               
           
     def add_new_tab(self,index,text):
@@ -75,13 +75,9 @@ class LaunchTRANUSDialog(QtGui.QDialog, FORM_CLASS):
         new_tab.run_tranus_btn.clicked.connect(self.run_tranus)
         new_tab.check_all_btn.clicked.connect(self.check_all_scenarios)
         new_tab.clear_console.clicked.connect(self.clear_history)
-        new_tab.buttonBox.button(QtGui.QDialogButtonBox.Close).clicked.connect(self.close)
-        new_tab.buttonBox.button(QtGui.QDialogButtonBox.Help).clicked.connect(self.help)
-        
-    def help(self):
-        file = os.path.join(os.path.dirname(os.path.realpath(__file__)),"help\Tranusprograms.pdf")
-        os.startfile(file)
-           
+        new_tab.close_btn.clicked.connect(self.close)
+      
+    
     def show(self):
         self.put_tabs()
        
